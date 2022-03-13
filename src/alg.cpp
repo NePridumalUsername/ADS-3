@@ -1,15 +1,13 @@
-// Copyright 2021 NNTU-CS
-
-int cbinsearch(int *arr, int size, int value) {
+int cbinsearch(int* arr, int size, int value) {
 int left = 0;
 int right = size;
 int midd = 0;
 static int count = 0;
 while (1) {
 midd = (left + right) / 2;
-if (value < arr[midd])
+if (value < arr[midd]) {
 right = midd - 1;
-else if (value > arr[midd]) {
+} else if (value > arr[midd]) {
 left = midd + 1;
 } else {
 count++;
@@ -20,6 +18,7 @@ arr[i] = arr[midd];
 arr[midd] = temp;
 }
 cbinsearch(arr, size, value);
+break;
 }
 if (left > right)
 break;
