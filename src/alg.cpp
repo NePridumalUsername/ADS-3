@@ -9,12 +9,12 @@ while (1) {
 midd = (left + right) / 2;
 if (value < arr[midd])
 right = midd - 1;
-else if (value > arr[midd])
+else if (value > arr[midd]) {
 left = midd + 1;
-else {
+} else {
 count++;
 arr[midd] = -1;
-for (int i = midd -1; i >= 0; i--) {
+for (int i = midd -1; i >= 0; i--, midd--) {
 int temp = arr[i];
 arr[i] = arr[midd];
 arr[midd] = temp;
